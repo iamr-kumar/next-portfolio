@@ -58,13 +58,15 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   return (
-    <div className="w-full fixed top-0 left-0 z-[100] lg:backdrop-blur-3xl shadow lg:shadow-none">
+    <div className="w-full fixed top-0 left-0 z-[500] bg-[#272727] shadow">
       {mobileOpen && <MobileNav />}
       <div
         className={`flex justify-between items-center w-full px-4 md:px-16 lg:px-[100] transition-all ease-in-out duration-300`}
       >
         <div className="lg:hidden"></div>
-        <Image src={logo} height={80} width={80} />
+        <div className="md:ml-4 lg:ml-8">
+          <Image src={logo} height={80} width={80} />
+        </div>
         <ul className="hidden lg:flex">
           {menuItems.map((item, index) => (
             <Link href={item.link} key={index}>
