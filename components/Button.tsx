@@ -20,7 +20,7 @@ const Button = (props: ButtonProps) => {
         target="_blank"
         className={`${
           type === ButtonType.PRIMARY ? "bg-[#0085FF] text-white" : "bg-white text-[#0085FF]"
-        } px-3 py-2 md:px-5 md:py-3 rounded-[50px] shadow`}
+        } px-3 py-2 md:px-5 md:py-3 rounded-[50px] shadow transition-transform hover:scale-110`}
       >
         {text}
       </a>
