@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import About from "../components/About";
 import HomeComponent from "../components/Home";
 import Navbar from "../components/Navbar";
+import Testimonials from "../components/Testimonials";
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
       <Navbar />
       <HomeComponent />
       <About />
+      <Testimonials />
     </>
   );
 };
