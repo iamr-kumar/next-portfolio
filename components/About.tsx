@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Divider from "./Divider";
 import aboutImage from "../assets/about_pic.jpg";
-import { FaCheckCircle, FaChevronRight } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import Button, { ButtonType } from "./Button";
 
 const About = () => {
@@ -20,9 +20,9 @@ const About = () => {
   return (
     <div className="bg-[#1e1e1e80] relative">
       <Divider heading="About" />
-      <div className="flex flex-col lg:flex-row items-center px-8 lg:px-48 pt-20 lg:pt-0 gap-16">
+      <div className="flex flex-col lg:flex-row items-center px-8 lg:px-48 py-20 md:pt-16 lg:pt-0 lg:pb-10 gap-16">
         <div className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px] flex justify-center items-center">
-          <Image src={aboutImage} className="rounded-full" />
+          <Image src={aboutImage} className="rounded-full" alt="Ritik Kumar face" />
         </div>
         <div className="pt-4 md:w-[80%] lg:w-full">
           <p className="text-white text-sm">
@@ -33,7 +33,7 @@ const About = () => {
           <div className="mt-4 w-full">
             <div className="flex justify-around">
               {aboutMenu.map((menu, index) => (
-                <div className="w-full cursor-pointer group" onClick={() => handleSelect(index)}>
+                <div className="w-full cursor-pointer group" onClick={() => handleSelect(index)} key={index}>
                   <h3
                     className={`${index === active ? "text-[#0085FF]" : "text-[#A7A7A7]"} group-hover:text-[#0085FF]`}
                   >

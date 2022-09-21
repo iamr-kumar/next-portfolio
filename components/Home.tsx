@@ -28,7 +28,11 @@ const HomeComponent = () => {
         </div>
       </div>
       <div className="hidden lg:block relative">
-        <Image src={ritikImage} className="absolute top-0 left-0 rounded-bl-[258px] z-[100] w-[95%]" />
+        <Image
+          src={ritikImage}
+          className="absolute top-0 left-0 rounded-bl-[258px] z-[100] w-[95%]"
+          alt="Ritik Kumar face"
+        />
         <div className=" absolute z-[50] rounded-bl-[258px] bg-[#789DC7] -top-11 -right-11 h-full w-full"></div>
       </div>
     </div>
