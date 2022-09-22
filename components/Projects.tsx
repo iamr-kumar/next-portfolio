@@ -49,6 +49,7 @@ const Projects = () => {
             imageSrc={project.imageSrc}
             techStack={project.techStack}
             alignment={index % 2 === 0 ? Alignment.RIGHT : Alignment.LEFT}
+            key={index}
           />
         ))}
       </div>

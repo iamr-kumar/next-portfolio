@@ -110,7 +110,7 @@ const Education = () => {
     <div className="px-2 md:px-8">
       <div className="info-container flex flex-col gap-8 border-l-[3px] pl-8 md:pl-12 py-6">
         {educationInfo.map((info, index) => (
-          <div className="info-item relative">
+          <div className="info-item relative" key={index}>
             <div className="absolute h-4 w-4 rounded-full bg-[#0885FF] border-2 border-white top-6 -left-[42px] md:-left-[58px]"></div>
             <h6 className="italic text-[#aeaeae] font-normal text-sm">
               {info.from} - {info.to}
