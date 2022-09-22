@@ -6,6 +6,7 @@ module.exports = {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
       dancingScript: ["Dancing Script", "cursive"],
+      openSans: ["Open Sans", "sans-serif"],
     },
     letterSpacing: {
       tight: "-0.025em",

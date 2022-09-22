@@ -4,6 +4,7 @@ import Divider from "./Divider";
 import aboutImage from "../assets/about_pic.jpg";
 import { FaCheckCircle } from "react-icons/fa";
 import Button, { ButtonType } from "./Button";
+import ListItem from "./ListItem";
 
 const About = () => {
   const aboutMenu = ["Skills", "Education"];
@@ -21,7 +22,7 @@ const About = () => {
     <div className="bg-[#1e1e1e90] relative">
       <Divider heading="About" />
       <div className="flex flex-col lg:flex-row px-8 lg:px-48 pt-20 pb-16 md:pb-8 lg:pb-4 gap-16 items-center lg:items-start">
-        <div className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px] flex justify-center items-center">
+        <div className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px] flex justify-center items-start">
           <Image src={aboutImage} className="rounded-full" alt="Ritik Kumar face" />
         </div>
         <div className="pt-4 md:w-[80%] lg:w-full">
@@ -55,6 +56,8 @@ const About = () => {
   );
 };
 
+export default About;
+
 const Skills = () => {
   const skills = ["HTML", "CSS", "JS/TS", "ReactJs/NextJs", "Node.js (Express)", "MongoDb", "REST APIs", "Firebase"];
 
@@ -62,11 +65,8 @@ const Skills = () => {
     <>
       <ul className="grid grid-rows-4 grid-flow-col gap-4 md:gap-8">
         {skills.map((skill, index) => (
-          <li key={index} className="flex items-center rounded transition-colors cursor-default group">
-            <span className="text-[#0085FF] group-hover:text-white transition-colors group-hover:-rotate-12 group-hover:scale-110">
-              <FaCheckCircle />
-            </span>
-            <h6 className="ml-2">{skill}</h6>
+          <li key={index}>
+            <ListItem text={skill} />
           </li>
         ))}
       </ul>
@@ -111,7 +111,7 @@ const Education = () => {
       <div className="info-container flex flex-col gap-8 border-l-[3px] pl-8 md:pl-12 py-6">
         {educationInfo.map((info, index) => (
           <div className="info-item relative">
-            <div className="absolute h-4 w-4 rounded-full bg-[#0885FF] border-2 border-white top-6 -left-[42px] md:-left-[56px]"></div>
+            <div className="absolute h-4 w-4 rounded-full bg-[#0885FF] border-2 border-white top-6 -left-[42px] md:-left-[58px]"></div>
             <h6 className="italic text-[#aeaeae] font-normal text-sm">
               {info.from} - {info.to}
             </h6>
@@ -125,5 +125,3 @@ const Education = () => {
     </div>
   );
 };
-
-export default About;
