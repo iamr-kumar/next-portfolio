@@ -72,7 +72,7 @@ const Testimonials = (props: { deviceType: string }) => {
           ssr={true} // means to render carousel on server-side.
           infinite={false}
           autoPlay={props.deviceType === "mobile"}
-          autoPlaySpeed={2000}
+          autoPlaySpeed={5000}
           keyBoardControl={true}
           transitionDuration={300}
           removeArrowOnDeviceType={["mobile"]}
