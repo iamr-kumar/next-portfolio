@@ -51,7 +51,7 @@ const TestimonialCard = (props: TestimonialType) => {
       <div className="px-6 pt-12 pb-8 flex flex-col justify-between h-full">
         <p className="text-white text-sm font-openSans leading-5 italic tracking-wide">{text}</p>
         <div className="mt-4 font-openSans">
-          <h4 className="text-lg text-[#0885FF] font-openSans">{from}</h4>
+          <h4 className="text-lg text-[#0885FF] font-openSans tracking-normal">{from}</h4>
           <h6 className="font-normal italic text-sm text-gray-300">{position}</h6>
         </div>
       </div>
@@ -59,7 +59,7 @@ const TestimonialCard = (props: TestimonialType) => {
   );
 };
 
-const Testimonials = () => {
+const Testimonials = (props: { deviceType: string }) => {
   return (
     <div className="relative">
       <Divider heading="Testimonials" alignment={Alignment.LEFT} />
@@ -71,6 +71,8 @@ const Testimonials = () => {
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={false}
+          autoPlay={props.deviceType === "mobile"}
+          autoPlaySpeed={2000}
           keyBoardControl={true}
           transitionDuration={300}
           removeArrowOnDeviceType={["mobile"]}
