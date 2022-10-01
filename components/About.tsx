@@ -29,7 +29,7 @@ const About = () => {
             I am a software engineer with a love for video games and reading. Still being in my last year of undergrad,
             I have already served <span className="underline">multiple ecstatic clients</span> over several successful
             projects and have <span className="underline">worked at Microsoft IDC.</span> When I am not coding, I am
-            either behind a book or completing some mission. <br /> Drop me a hi and let's get your next idea into
+            either behind a book or completing some mission. <br /> Drop me a hi and let&apos;s get your next idea into
             shape!
           </p>
           <div className="mt-4 w-full">
