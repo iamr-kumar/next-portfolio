@@ -23,10 +23,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setDialogOpen(true);
-    // await fetch("/api/mail", {
-    //   method: "post",
-    //   body: JSON.stringify(formData),
-    // });
+    await fetch("/api/mail", {
+      method: "post",
+      body: JSON.stringify(formData),
+    });
   };
 
   const handleDialogOpen = () => {
@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <>
       {isDialogOpen && <FormSubmitDialogue handleDialogOpen={handleDialogOpen} />}
-      <div className="relative">
+      <div className="relative" id="contact">
         <Divider heading="Contact" alignment={Alignment.LEFT} />
         <div className="pt-8 sm:pt-12 md:pt-16 sm:px-8 md:px-12 lg:px-24 xl:px-36 px-4 py-4">
           <div className="flex">
