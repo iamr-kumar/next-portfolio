@@ -1,9 +1,8 @@
-import React from "react";
 import Image from "next/image";
-import Divider from "./Divider";
+import React from "react";
 import aboutImage from "../assets/about_pic.jpg";
-import { FaCheckCircle } from "react-icons/fa";
 import Button, { ButtonType } from "./Button";
+import Divider from "./Divider";
 import ListItem from "./ListItem";
 
 const About = () => {
@@ -27,9 +26,11 @@ const About = () => {
         </div>
         <div className="pt-4 md:w-[80%] lg:w-full">
           <p className="text-white text-sm">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus porro quia inventore laboriosam nihil, ex
-            ipsam harum illum, veniam cupiditate, nam rem eaque libero quo explicabo impedit consequatur consectetur
-            accusamus?
+            I am a software engineer with a love for video games and reading. Still being in my last year of undergrad,
+            I have already served <span className="underline">multiple ecstatic clients</span> over several successful
+            projects and have <span className="underline">worked at Microsoft IDC.</span> When I am not coding, I am
+            either behind a book or completing some mission. <br /> Drop me a hi and let's get your next idea into
+            shape!
           </p>
           <div className="mt-4 w-full">
             <div className="flex justify-around">

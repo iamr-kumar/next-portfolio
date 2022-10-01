@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import mail from "@sendgrid/mail";
+import axios from "axios";
 
 mail.setApiKey(process.env.SENDGRID_API_KEY!);
 
@@ -8,8 +9,9 @@ type Data = {
   message: string;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const body = JSON.parse(req.body);
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  const body = req.body;
+  console.log(body);
 
   const message = `
     Name: ${body.name}\r\n
@@ -25,8 +27,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     html: message.replace(/\r\n/g, "<br>"),
   };
 
-  mail.send(data);
+  // const queryRes = await axios.post(
+  //   "https://www.google.com/recaptcha/api/siteverify",
+  //   `secret=${process.env.RECAPTCHA_SECRET_KEY!}&response=${body.token}`
+  // );
+  // console.log(queryRes.data);
 
-  console.log(body);
+  // if (queryRes.data.score > 0.5) {
+  mail.send(data);
   res.status(200).json({ message: "Email Sent!" });
+  // }
+  // return res.status(500).json({ message: "Some error occurred" });
 }

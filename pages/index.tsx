@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from "next";
+import Head from "next/head";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -10,6 +11,26 @@ import Testimonials from "../components/Testimonials";
 const Home = (props: { deviceType: string }) => {
   return (
     <>
+      <Head>
+        <title>Ritik Kumar - Software Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="I am a full stack developer who can help you in creating stuff ranging from simple landing pages to complex web apps!"
+        />
+        <meta property="og:title" content="Ritik Kumar" />
+        <meta
+          property="og:desctiption"
+          content="I am a full stack developer who can help you in creating stuff ranging from simple landing pages to complex web apps!"
+        />
+        <meta name="keywords" content="Ritik, Kumar, Ritik Kumar, developer, web developer, app developer, freelance" />
+        <meta property="og:url" content="https://devritik.com" />
+        <meta
+          property="og:image"
+          content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
       <Navbar />
       <HomeComponent />
       <About />

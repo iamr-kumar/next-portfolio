@@ -15,11 +15,15 @@ const HomeComponent = () => {
           I am a <span className="gradient-text">full stack</span> dev.
         </h1>
         <p className="mt-4 w-full md:w-[80%] lg:w-[70%] text-center lg:text-start">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Lorem ipsum
-          dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
+          Hi, I work towards creating solutions for your ideas to turn them into reality. Currently a final year student
+          of CS undergrad, I work as a <span className="text-gray-200">freelance web developer</span> wherein I can
+          create (and sometimes design){" "}
+          <span className="text-gray-200">
+            beautiful and intuitive UIs and/or develop reliable and scalable backend systems.{" "}
+          </span>
         </p>
         <div className="mt-8 flex gap-6">
-          <Button type={ButtonType.PRIMARY} link="https://www.linkedin.com/in/ritikkumar29/" text="Work with me!" />
+          <Button type={ButtonType.PRIMARY} link="#contact" text="Work with me!" newPage={false} />
           <Button
             type={ButtonType.SECONDARY}
             link="https://drive.google.com/file/d/1BeaBWyv6ralmzgF2Il5jcAqSaoeXNmz2/view?usp=sharing"

@@ -1,7 +1,9 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useCallback } from "react";
 import Image from "next/image";
 import emailSvg from "../assets/emailSvg.svg";
 import Divider, { Alignment } from "./Divider";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import axios from "axios";
 
 interface FormData {
   name?: string;
@@ -12,6 +14,7 @@ interface FormData {
 const Contact = () => {
   const [formData, setFormData] = React.useState<FormData>();
   const [isDialogOpen, setDialogOpen] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -20,14 +23,28 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setDialogOpen(true);
-    await fetch("/api/mail", {
-      method: "post",
-      body: JSON.stringify(formData),
-    });
-  };
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      // if (!executeRecaptcha) {
+      //   console.log(executeRecaptcha);
+      //   return;
+      // }
+      // const token = await executeRecaptcha("contactFormSubmit");
+      // console.log(token);
+      const res = await axios.post("/api/mail", formData);
+
+      if (res.status === 200) {
+        setSuccess(true);
+      } else {
+        setSuccess(false);
+      }
+      setDialogOpen(true);
+    },
+    [executeRecaptcha]
+  );
 
   const handleDialogOpen = () => {
     setDialogOpen(false);
@@ -35,7 +52,7 @@ const Contact = () => {
 
   return (
     <>
-      {isDialogOpen && <FormSubmitDialogue handleDialogOpen={handleDialogOpen} />}
+      {isDialogOpen && <FormSubmitDialogue handleDialogOpen={handleDialogOpen} success={success} />}
       <div className="relative" id="contact">
         <Divider heading="Contact" alignment={Alignment.LEFT} />
         <div className="pt-8 sm:pt-12 md:pt-16 sm:px-8 md:px-12 lg:px-24 xl:px-36 px-4 py-4">
@@ -96,17 +113,21 @@ const Contact = () => {
 
 export default Contact;
 
-const FormSubmitDialogue = ({ handleDialogOpen }: { handleDialogOpen: () => void }) => {
+const FormSubmitDialogue = ({ handleDialogOpen, success }: { handleDialogOpen: () => void; success: boolean }) => {
   return (
     <div className="fixed top-0 flex justify-center items-center left-0 w-screen h-screen backdrop-blur-[5px] z-[10000]">
       <div className="h-[200px] sm:w-[400px] w-[350px] text-center bg-[#0885FF] text-white rounded-lg px-4 py-8">
-        <h3 className="text-2xl tracking-wide">Message Received!</h3>
-        <p className="mt-2 tracking-normal text-gray-300">Thank you for contacting. I will get back to you soon!</p>
+        <h3 className="text-2xl tracking-wide">{success ? "Message Received" : "Oops..."}</h3>
+        <p className="mt-2 tracking-normal text-gray-300">
+          {success
+            ? "Thank you for contacting. I will get back to you soon!"
+            : "Something went wrong. Please try again!"}
+        </p>
         <button
           onClick={handleDialogOpen}
           className="mt-4 px-3 py-2 md:px-4 md:py-2 rounded-xl shadow transition-transform hover:scale-110 text-[#0885FF] bg-white"
         >
-          Great
+          {success ? "Great" : "Sure"}
         </button>
       </div>
     </div>
