@@ -37,7 +37,7 @@ const ProjectCard = (props: ProjectType & { alignment: Alignment }) => {
 
 const Projects = () => {
   return (
-    <div className="relative bg-[#1e1e1e90] w-full">
+    <div className="relative bg-[#1e1e1e90] w-full" id="projects">
       <Divider heading="Projects" alignment={Alignment.RIGHT} />
       <div className="pt-12 xl:px-48 lg:px-24 md:px-12 sm:px-6 px-3 pb-8">
         {projects.map((project, index) => (

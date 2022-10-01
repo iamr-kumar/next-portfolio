@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HomeComponent = () => {
   return (
-    <div className="px-8 md:px-16 mt-44 lg:mt-56 flex flex-row justify-around pb-20">
+    <div className="px-8 md:px-16 mt-44 lg:mt-56 flex flex-row justify-around pb-20" id="home">
       <div className="flex flex-col items-center w-full lg:w-[60%] lg:w-content lg:items-start">
         <h3 className="uppercase text-[#aeaeae] tracking-widest">Hi, my name is </h3>
         <h1 className="uppercase mt-4 text-center lg:text-start">

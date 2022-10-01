@@ -1,3 +1,4 @@
+import { AiFillInstagram } from "react-icons/ai";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import cheerUp from "../assets/cheer-up.jpg";
@@ -77,8 +78,3 @@ export const projects: ProjectType[] = [
     demo: "https://afternoon-cove-76712.herokuapp.com/",
   },
 ];
-
-interface SocialType {
-  icon: ReactNode;
-  link: string;
-}

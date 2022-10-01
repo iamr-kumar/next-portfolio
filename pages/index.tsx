@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from "next";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 import HomeComponent from "../components/Home";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
@@ -15,6 +16,7 @@ const Home = (props: { deviceType: string }) => {
       <Testimonials deviceType={props.deviceType} />
       <Projects />
       <Contact />
+      <Footer />
     </>
   );
 };

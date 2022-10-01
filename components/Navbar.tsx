@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
 import Image from "next/image";
-import logo from "../assets/logo.png";
 import Link from "next/link";
+import React, { useCallback } from "react";
+import logo from "../assets/logo.png";
+import { SocialLinks } from "./Footer";
 
 interface MenuItemType {
   link: string;
@@ -10,34 +11,35 @@ interface MenuItemType {
 
 const menuItems: MenuItemType[] = [
   {
-    link: "/",
+    link: "#home",
     placeholder: "Home",
   },
   {
-    link: "/",
+    link: "#about",
     placeholder: "About",
   },
   {
-    link: "/",
+    link: "#testimonials",
     placeholder: "Testimonials",
   },
   {
-    link: "/",
+    link: "#projects",
     placeholder: "Projects",
   },
   {
-    link: "/",
+    link: "#contact",
     placeholder: "Contact",
   },
 ];
 
-const MobileNav = () => {
+const MobileNav = ({ handleMobileOpen }: { handleMobileOpen: () => void }) => {
   return (
     <div className="w-screen h-screen z-1000 fixed top-0 left-0 bg-[#272727] lg:hidden">
       <ul className="flex flex-col justify-center h-full items-center">
         {menuItems.map((item, index) => (
           <Link href={item.link} key={index}>
             <li
+              onClick={handleMobileOpen}
               className="text-base w-[80%] py-4 flex flex-col items-center uppercase tracking-widest transition border-y border-[#AEAEAE
 ] hover:bg-[#0085FF]"
             >
@@ -45,8 +47,10 @@ const MobileNav = () => {
             </li>
           </Link>
         ))}
+        <div className="mt-12">
+          <SocialLinks />
+        </div>
       </ul>
-      <div className=""></div>
     </div>
   );
 };
@@ -60,7 +64,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full fixed top-0 left-0 z-[500] bg-[#272727] shadow">
-      {mobileOpen && <MobileNav />}
+      {mobileOpen && <MobileNav handleMobileOpen={handleMobileOpen} />}
       <div
         className={`flex justify-between items-center w-full px-4 md:px-16 lg:px-[100] transition-all ease-in-out duration-300`}
       >

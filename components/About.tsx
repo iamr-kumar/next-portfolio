@@ -19,7 +19,7 @@ const About = () => {
   );
 
   return (
-    <div className="bg-[#1e1e1e90] relative">
+    <div className="bg-[#1e1e1e90] relative" id="about">
       <Divider heading="About" />
       <div className="flex flex-col lg:flex-row px-8 lg:px-48 pt-20 pb-16 md:pb-8 lg:pb-4 gap-16 items-center lg:items-start">
         <div className="h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px] flex justify-center items-start">

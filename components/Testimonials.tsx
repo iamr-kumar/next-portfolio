@@ -61,7 +61,7 @@ const TestimonialCard = (props: TestimonialType) => {
 
 const Testimonials = (props: { deviceType: string }) => {
   return (
-    <div className="relative">
+    <div className="relative" id="testimonials">
       <Divider heading="Testimonials" alignment={Alignment.LEFT} />
       <div className="px-2 sm:px-6 md:px-12 lg:px-24 pt-12 sm:pt-20 md:mb-12 mb-8 lg:pb-4">
         <Carousel
