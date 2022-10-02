@@ -44,7 +44,7 @@ const Projects = () => {
           <ProjectCard
             title={project.title}
             desc={project.desc}
-            demo={project.desc}
+            demo={project.demo}
             github={project.github}
             imageSrc={project.imageSrc}
             techStack={project.techStack}
