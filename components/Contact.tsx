@@ -48,7 +48,11 @@ const Contact = () => {
     } catch (err) {
       setSuccess(false);
     }
-
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
     setDialogOpen(true);
   };
 
@@ -78,6 +82,7 @@ const Contact = () => {
                     required
                     id="name"
                     onChange={handleChange}
+                    value={formData.name}
                   />
                 </div>
                 <div className="my-3">
@@ -88,6 +93,7 @@ const Contact = () => {
                     required
                     id="email"
                     onChange={handleChange}
+                    value={formData.email}
                   />
                 </div>
                 <div className="my-3">
@@ -98,6 +104,7 @@ const Contact = () => {
                     rows={7}
                     id="message"
                     onChange={handleChange}
+                    value={formData.message}
                   />
                 </div>
                 <div className="my-3">
