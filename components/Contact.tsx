@@ -1,18 +1,16 @@
-import React, { FormEvent, useCallback } from "react";
 import Image from "next/image";
+import React from "react";
 import emailSvg from "../assets/emailSvg.svg";
 import Divider, { Alignment } from "./Divider";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import axios from "axios";
 
 interface FormData {
-  name?: string;
-  email?: string;
-  message?: string;
+  name: string;
+  email: string;
+  message: string;
 }
 
 const Contact = () => {
-  const [formData, setFormData] = React.useState<FormData>();
+  const [formData, setFormData] = React.useState<FormData>({ name: "", email: "", message: "" });
   const [isDialogOpen, setDialogOpen] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
 
@@ -23,40 +21,36 @@ const Contact = () => {
     });
   };
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // if (!executeRecaptcha) {
+    //   console.log(executeRecaptcha);
+    //   return;
+    // }
+    // const token = await executeRecaptcha("contactFormSubmit");
+    // console.log(token);
+    try {
+      console.log(formData);
+      const res = await fetch("/api/mail", {
+        method: "post",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
 
-  const handleSubmit = useCallback(
-    async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      // if (!executeRecaptcha) {
-      //   console.log(executeRecaptcha);
-      //   return;
-      // }
-      // const token = await executeRecaptcha("contactFormSubmit");
-      // console.log(token);
-      try {
-        const res = await fetch("/api/mail", {
-          method: "post",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        });
-
-        if (res.ok) {
-          setSuccess(true);
-        } else {
-          setSuccess(false);
-        }
-      } catch (err) {
+      if (res.ok) {
+        setSuccess(true);
+      } else {
         setSuccess(false);
       }
+    } catch (err) {
+      setSuccess(false);
+    }
 
-      setDialogOpen(true);
-    },
-    [executeRecaptcha]
-  );
+    setDialogOpen(true);
+  };
 
   const handleDialogOpen = () => {
     setDialogOpen(false);
