@@ -11,7 +11,6 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const body = req.body;
-  console.log(body);
 
   const message = `
     Name: ${body.name}\r\n
@@ -34,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   // console.log(queryRes.data);
 
   // if (queryRes.data.score > 0.5) {
-  mail.send(data);
+  await mail.send(data);
   res.status(200).json({ message: "Email Sent!" });
   // }
   // return res.status(500).json({ message: "Some error occurred" });
