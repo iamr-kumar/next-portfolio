@@ -11,6 +11,7 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const body = req.body;
+  console.log(body);
   const message = `
     Name: ${body.name}\r\n
     Email: ${body.email}\r\r
