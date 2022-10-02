@@ -21,6 +21,7 @@ const Contact = () => {
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
+    console.log(formData);
   };
 
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -35,12 +36,10 @@ const Contact = () => {
       // const token = await executeRecaptcha("contactFormSubmit");
       // console.log(token);
       try {
-        const res = await fetch("/api/mail", {
-          method: "post",
-          body: JSON.stringify(formData),
-        });
+        console.log(formData);
+        const res = await axios.post("/api/mail", formData);
 
-        if (res.ok) {
+        if (res.status === 200) {
           setSuccess(true);
         } else {
           setSuccess(false);
