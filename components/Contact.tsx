@@ -34,13 +34,21 @@ const Contact = () => {
       // }
       // const token = await executeRecaptcha("contactFormSubmit");
       // console.log(token);
-      const res = await axios.post("/api/mail", formData);
+      try {
+        const res = await fetch("/api/mail", {
+          method: "post",
+          body: JSON.stringify(formData),
+        });
 
-      if (res.status === 200) {
-        setSuccess(true);
-      } else {
+        if (res.ok) {
+          setSuccess(true);
+        } else {
+          setSuccess(false);
+        }
+      } catch (err) {
         setSuccess(false);
       }
+
       setDialogOpen(true);
     },
     [executeRecaptcha]
