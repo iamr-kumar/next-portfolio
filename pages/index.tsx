@@ -23,7 +23,10 @@ const Home = (props: { deviceType: string }) => {
           property="og:desctiption"
           content="I am a full stack developer who can help you in creating stuff ranging from simple landing pages to complex web apps!"
         />
-        <meta name="keywords" content="Ritik, Kumar, Ritik Kumar, developer, web developer, app developer, freelance" />
+        <meta
+          name="keywords"
+          content="Ritik, Kumar, Ritik Kumar, software developer, software engineer, freelance web developer, web developer, ritik kumar, ritik kumar upwork, devritik, developer ritik, full stack developer, frontend developer, backend developer"
+        />
         <meta property="og:url" content="https://devritik.com" />
         <meta
           property="og:image"
