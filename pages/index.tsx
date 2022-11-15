@@ -32,14 +32,34 @@ const Home = (props: { deviceType: string }) => {
           property="og:image"
           content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
         />
+
+        <meta property="og:url" content="https://devritik.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ritik Kumar" />
+        <meta
+          property="og:description"
+          content="A full stack developer who can help you in creating stuff ranging from simple landing pages to complex web apps!"
+        />
+        <meta
+          property="og:image"
+          content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
+        />
+
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="devritik.com" />
+        <meta property="twitter:domain" content="devritik.com" />
+        <meta property="twitter:url" content="https://devritik.com" />
         <meta name="twitter:title" content="Ritik Kumar" />
-        <meta name="twitter:description" content="Full Stack Developer" />
+        <meta
+          name="twitter:description"
+          content="A full stack developer who can help you in creating stuff ranging from simple landing pages to complex web apps!"
+        />
         <meta
           name="twitter:image"
           content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
         />
+
+        {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
       </Head>
       <Navbar />
       <HomeComponent />
