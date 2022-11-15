@@ -30,7 +30,7 @@ const Home = (props: { deviceType: string }) => {
         <meta property="og:url" content="https://devritik.com" />
         <meta
           property="og:image"
-          content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
+          content="https://github.com/iamr-kumar/next-portfolio/blob/master/assets/meta-card-image.png"
         />
 
         <meta property="og:url" content="https://devritik.com" />
@@ -42,7 +42,7 @@ const Home = (props: { deviceType: string }) => {
         />
         <meta
           property="og:image"
-          content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
+          content="https://github.com/iamr-kumar/next-portfolio/blob/master/assets/meta-card-image.png"
         />
 
         {/* <!-- Twitter Meta Tags --> */}
@@ -56,7 +56,7 @@ const Home = (props: { deviceType: string }) => {
         />
         <meta
           name="twitter:image"
-          content="https://drive.google.com/file/d/1Vr8R8Vb4rPYZnMMdF6ZFaqD2dl2i-AkM/view?usp=sharing"
+          content="https://github.com/iamr-kumar/next-portfolio/blob/master/assets/meta-card-image.png"
         />
 
         {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
