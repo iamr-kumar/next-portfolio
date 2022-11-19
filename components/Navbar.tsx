@@ -7,6 +7,7 @@ import { SocialLinks } from "./Footer";
 interface MenuItemType {
   link: string;
   placeholder: string;
+  target?: string;
 }
 
 const menuItems: MenuItemType[] = [
@@ -25,6 +26,11 @@ const menuItems: MenuItemType[] = [
   {
     link: "#projects",
     placeholder: "Projects",
+  },
+  {
+    link: "https://blog.devritik.com",
+    placeholder: "Blog",
+    target: "_blank",
   },
   {
     link: "#contact",
@@ -74,7 +80,7 @@ const Navbar = () => {
         </div>
         <ul className="hidden lg:flex">
           {menuItems.map((item, index) => (
-            <Link href={item.link} key={index}>
+            <Link href={item.link} key={index} target={item.target ? item.target : "_self"}>
               <li className="ml-10 text-base uppercase tracking-widest transition hover:text-[#0085FF]">
                 {item.placeholder}
               </li>
