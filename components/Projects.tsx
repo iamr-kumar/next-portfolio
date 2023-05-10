@@ -1,10 +1,10 @@
-import Image, { StaticImageData } from "next/image";
-import React from "react";
-import Divider, { Alignment } from "./Divider";
-import ListItem from "./ListItem";
-import cheerUp from "../assets/cheer-up.jpg";
-import Button, { ButtonType } from "./Button";
-import { projects, ProjectType } from "../utils/constants";
+import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import Divider, { Alignment } from './Divider';
+import ListItem from './ListItem';
+import cheerUp from '../assets/cheer-up.jpg';
+import Button, { ButtonType } from './Button';
+import { projects, ProjectType } from '../utils/constants';
 
 const ProjectCard = (props: ProjectType & { alignment: Alignment }) => {
   const { title, demo, desc, github, imageSrc, techStack, alignment } = props;
@@ -12,14 +12,16 @@ const ProjectCard = (props: ProjectType & { alignment: Alignment }) => {
   return (
     <div
       className={`bg-[#272727] flex items-stretch p-4 sm:p-6 flex-col lg:p-8 gap-8 rounded-lg my-8 shadow-lg ${
-        alignment === Alignment.LEFT ? "lg:flex-row-reverse" : "lg:flex-row"
+        alignment === Alignment.LEFT ? 'lg:flex-row-reverse' : 'lg:flex-row'
       }`}
     >
       <div className="xl:flex-1 lg:flex-2/3 rounded-lg flex items-center">
-        <Image src={imageSrc} className="rounded-lg" />
+        <Image src={imageSrc} className="rounded-lg" alt="project screenshot" />
       </div>
       <div className="px-4 xl:flex-1 lg:flex-1/3 text-center lg:text-start">
-        <h1 className="text-3xl lg:text-4xl font-openSans tracking-wide">{title}</h1>
+        <h1 className="text-3xl lg:text-4xl font-openSans tracking-wide">
+          {title}
+        </h1>
         <div className="flex gap-3 mt-2 justify-center lg:justify-start flex-wrap">
           {techStack.map((stack, index) => (
             <ListItem text={stack} key={index} />
