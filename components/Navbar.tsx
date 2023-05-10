@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import React, { useCallback } from "react";
-import logo from "../assets/logo.png";
-import { SocialLinks } from "./Footer";
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useCallback } from 'react';
+import logo from '../assets/logo.png';
+import { SocialLinks } from './Footer';
 
 interface MenuItemType {
   link: string;
@@ -12,29 +12,29 @@ interface MenuItemType {
 
 const menuItems: MenuItemType[] = [
   {
-    link: "#home",
-    placeholder: "Home",
+    link: '#home',
+    placeholder: 'Home',
   },
   {
-    link: "#about",
-    placeholder: "About",
+    link: '#about',
+    placeholder: 'About',
   },
   {
-    link: "#testimonials",
-    placeholder: "Testimonials",
+    link: '#testimonials',
+    placeholder: 'Testimonials',
   },
   {
-    link: "#projects",
-    placeholder: "Projects",
+    link: '#projects',
+    placeholder: 'Projects',
   },
   {
-    link: "https://blog.devritik.com",
-    placeholder: "Blog",
-    target: "_blank",
+    link: 'https://blog.devritik.com',
+    placeholder: 'Blog',
+    target: '_blank',
   },
   {
-    link: "#contact",
-    placeholder: "Contact",
+    link: '#contact',
+    placeholder: 'Contact',
   },
 ];
 
@@ -76,11 +76,15 @@ const Navbar = () => {
       >
         <div className="lg:hidden"></div>
         <div className="md:ml-4 lg:ml-8">
-          <Image src={logo} height={80} width={80} />
+          <Image src={logo} height={80} width={80} alt="RK Logo" />
         </div>
         <ul className="hidden lg:flex">
           {menuItems.map((item, index) => (
-            <Link href={item.link} key={index} target={item.target ? item.target : "_self"}>
+            <Link
+              href={item.link}
+              key={index}
+              target={item.target ? item.target : '_self'}
+            >
               <li className="ml-10 text-base uppercase tracking-widest transition hover:text-[#0085FF]">
                 {item.placeholder}
               </li>
@@ -91,9 +95,9 @@ const Navbar = () => {
           className="flex flex-col justify-between w-10 h-7 cursor-pointer z-[1000] lg:hidden"
           onClick={handleMobileOpen}
         >
-          <span className={`line line1 ${mobileOpen ? "open" : ""}`}></span>
-          <span className={`line line2 ${mobileOpen ? "open" : ""}`}></span>
-          <span className={`line line3 ${mobileOpen ? "open" : ""}`}></span>
+          <span className={`line line1 ${mobileOpen ? 'open' : ''}`}></span>
+          <span className={`line line2 ${mobileOpen ? 'open' : ''}`}></span>
+          <span className={`line line3 ${mobileOpen ? 'open' : ''}`}></span>
         </div>
       </div>
     </div>

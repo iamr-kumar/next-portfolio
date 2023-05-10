@@ -11,9 +11,9 @@
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "axios": "^0.27.2",
-    "next": "12.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha-v3": "^1.10.0",
     "react-icons": "^4.4.0",
     "react-multi-carousel": "^2.8.2",
